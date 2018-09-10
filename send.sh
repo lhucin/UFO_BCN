@@ -27,8 +27,9 @@ do
 		aplay sstv.wav
 		sleep 0.2
 		gpio write 4 0
-		rm -f aprs.wav
+		# rm -f aprs.wav
 		sleep 20
 	fi
 	sleep 1
+	echo Cekal 1 sec
 done
