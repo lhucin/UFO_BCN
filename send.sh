@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /home/pi/pits/tracker
+cd /home/pi/sstv
 
 echo Enable audio
 sudo modprobe snd-bcm2835
@@ -7,8 +7,11 @@ sudo modprobe snd-bcm2835
 echo Redirect audio to GPIO ...
 gpio mode 1 alt5
 
-echo Set APRS volume ...
+echo Set SSTV volume ...
 amixer set PCM -- 400
+
+echo Set DR818 frequency ...
+sudo python set_DR818.py
 
 echo Set up DR818 control ...
 gpio mode 4 output
