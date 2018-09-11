@@ -1,0 +1,10 @@
+[Unit]
+Description=SSTV Service
+ 
+[Service]
+ExecStart=/home/pi/sstv/startup
+StandardOutput=null
+ 
+[Install]
+WantedBy=multi-user.target
+Alias=sstv.service
