@@ -13,23 +13,28 @@ amixer set PCM -- 400
 echo Set DR818 frequency ...
 sudo python set_DR818.py
 
+
 echo Set up DR818 control ...
 gpio mode 4 output
 gpio write 4 0
 
 while [ 1 ]
 do
-	if [ -e sstv.wav ]
-	then
-		echo Sending SSTV Picture
-		gpio write 4 1
-		sleep 0.5
-		aplay sstv.wav
-		sleep 0.2
-		gpio write 4 0
-		# rm -f aprs.wav
-		sleep 20
-	fi
-	sleep 1
-	echo Cekal 1 sec
+	for i in {1..8}
+	do
+		if [ -e sstv_$i.wav ]
+		then
+			echo Sending SSTV Picture $i
+			gpio write 4 1
+			sleep 0.5
+			aplay sstv_$i.wav
+			sleep 0.2
+			gpio write 4 0
+			# rm -f aprs.wav
+			sleep 15
+		fi
+			sleep 1
+			echo Not file
+	done
+	sleep 60
 done
