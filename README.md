@@ -5,8 +5,8 @@ Realized on DR818V module and Raspberry Zero.
 SSTV pistures prepared separately as a .WAV files
 
 #  Enabling startup script.
-#sudo cp -f sstv_bcn/sstv.service /lib/systemd/system
-#sudo systemctl enable sstv.service
+1.    sudo cp -f sstv_bcn/sstv.service /lib/systemd/system
+2.    sudo systemctl enable sstv.service
 
 #  Starting startup script
-#sudo systemctl start sstv.service
+3.    sudo systemctl start sstv.service
