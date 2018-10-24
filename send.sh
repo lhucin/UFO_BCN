@@ -20,7 +20,7 @@ gpio write 4 0
 
 while [ 1 ]
 do
-	for i in {1..8}
+	for i in {1..9}
 	do
 		if [ -e sstv_$i.wav ]
 		then
@@ -36,5 +36,5 @@ do
 			sleep 1
 			echo Not file
 	done
-	sleep 60
+	sleep 90
 done
